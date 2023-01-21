@@ -15,15 +15,20 @@ void SieveOfEratosthenes(int n)
     }
 }
  
-int main()
+int main(int argc, char *argv[])
 {
-
     unsigned long long int n;
     int output;
-    cout << "Enter limit: ";
-    cin >> n;
-    cout << "Would you like to print output? (1/0) ";
-    cin >> output;
+    if (argc > 1)
+    {
+        n = stoi(argv[1]);
+        output = stoi(argv[2]);
+    } else {
+        cout << "Enter limit: ";
+        cin >> n;
+        cout << "Would you like to print output? (1/0) ";
+        cin >> output;
+    }
     SieveOfEratosthenes(n);
     if (output) {
         for (int i = 1; i <= n; i++) {
