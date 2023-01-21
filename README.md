@@ -8,5 +8,5 @@ Available modes are:
   <li>No output</li>
   <li>Printed output</li>
   <li>File output (primes.txt)</li>
-</ol>
+</ol><br />
 WARNING: Outputting large numbers of primes to a file make have catastrophic consequences, during development I outputed primes under 1 trillion to a file and ended up with an 8GB file before I could stop the program and a locked file system.
