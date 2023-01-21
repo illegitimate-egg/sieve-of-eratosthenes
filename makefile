@@ -9,4 +9,4 @@ compile:
 	@echo "Done."
 
 clean:
-	rm -f main
+	rm -f main primes.txt
