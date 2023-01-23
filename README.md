@@ -10,3 +10,4 @@ Available modes are:
   <li>File output (primes.txt)</li>
 </ol><br />
 WARNING: Outputting large numbers of primes to a file make have catastrophic consequences, during development I outputted primes under 1 trillion to a file and ended up with an 8GB file and a locked file system before I could stop the program.
+NOTE: The program gives wrong results with numbers higher than about 4 billion. This is a bug and needs to be fixed.
