@@ -1,6 +1,8 @@
 #include <bitset>
 #include <iostream>
 #include <fstream>
+#include <vector>
+
 using namespace std;
  
 bitset<4949672952> Primes;
@@ -34,7 +36,7 @@ int main(int argc, char *argv[])
     } else {
         cout << "Enter limit: ";
         cin >> n;
-        cout << "Zero: No output One: Printed Output Two: Saved output (primes.txt)? (0/1/2) ";
+        cout << "(0): No output\n(1): Echoed output\n(2): Saved output (primes.txt)\n(3): RAM Save (primes.txt)\nOutput type: ";
         cin >> output;
     }
 
@@ -71,6 +73,21 @@ int main(int argc, char *argv[])
                 foundPrimes++;
                 primeFile << i << '\n';
             }
+        }
+    } else if (output == 3) {
+        vector<int> stored;
+        for (int i = 1; i <= n; i++) {
+            if (i == 2) {
+                foundPrimes++;
+                stored.push_back(i);
+            }
+            else if (i % 2 == 1 && Primes[i / 2] == 0) {
+                foundPrimes++;
+                stored.push_back(i);
+            }
+        }
+        for(int i=0; i < stored.size(); i++) {
+            primeFile << to_string(stored[i]) << '\n';
         }
     } else {
         cout << "Invalid output level" << endl;
